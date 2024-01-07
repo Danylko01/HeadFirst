@@ -20,6 +20,10 @@ public:
 		}
 		return m_instance;
 	}
+	// 测试直接调用公共方法
+	void doSomething() {
+		cout << "test call method." << endl;
+	}
 };
 
 Singleton* Singleton::m_instance = nullptr;
@@ -34,5 +38,6 @@ int main() {
 	else {
 		cout << "Two instances are different." << endl;
 	}
+	instance1->doSomething();
 	return 0;
 }
