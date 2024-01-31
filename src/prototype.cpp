@@ -16,6 +16,7 @@ private:
 public:
 	Circle(int radius):m_radius(radius){}
 	Shape* clone() const override {
+		// 引用当前对象实例,调用默认的拷贝构造函数
 		return new Circle(*this);
 	}
 	void draw() const override {
@@ -62,7 +63,12 @@ int main() {
 	prototypemanager.addPrototype("Rectangle", &rectanglePrototype);
 	Shape* shape1 = prototypemanager.getShapePrototype("Circle");
 	Shape* shape2 = prototypemanager.getShapePrototype("Rectangle");
-
+	Shape* shape3 = prototypemanager.getShapePrototype("Circle");
+	if (shape3 == shape1) {
+		cout << "objects are the same." << endl;
+	} else {
+		cout << "objects are different." << endl;
+	}
 	if (shape1 && shape2) {
 		shape1->draw();
 		shape2->draw();

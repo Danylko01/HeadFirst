@@ -1,0 +1,12 @@
+{
+	configurations: {
+		Launch: {
+			adapter: vscode-cpptools,
+			filetypes: [cpp, c, obj],
+			configuraton: {
+				request: launch,
+				program: main,
+				stopAtEntry: true,
+			}
+		}
+	}
