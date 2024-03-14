@@ -64,6 +64,9 @@ int main() {
 	cout << "cost: $" << foamDecorator->getCost() <<", des:" << foamDecorator->getDescription() << endl;
 	Coffee* chocolate = new ChocolateDecorator(simpleCoffee);
 	cout << "cost: $" << chocolate->getCost() << ",des:" << chocolate->getDescription() << endl;
+	Coffee* test = new ChocolateDecorator(foamDecorator);
+	cout << "test cost: $" << test->getCost() << ",des:" << test->getDescription() << endl;
 	delete simpleCoffee;
 	delete foamDecorator;	
+	delete test;
 }
